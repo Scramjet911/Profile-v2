@@ -4,13 +4,12 @@ type Props = {
   content: string;
 };
 
-export function PostBody({ content }: Props) {
-  return (
-    <div className="max-w-2xl mx-auto">
-      <div
-        className={markdownStyles["markdown"]}
-        dangerouslySetInnerHTML={{ __html: content }}
-      />
-    </div>
-  );
-}
+export const PostBody = ({ content }: Props) => (
+  <div className="max-w-2xl mx-auto">
+    <div
+      className={markdownStyles.markdown}
+      // eslint-disable-next-line react/no-danger
+      dangerouslySetInnerHTML={{ __html: content }}
+    />
+  </div>
+);

@@ -1,15 +1,16 @@
 import { Metadata } from "next";
 import { notFound } from "next/navigation";
-import { getAllPosts, getPostBySlug } from "@/lib/api";
-import { CMS_NAME } from "@/lib/constants";
-import markdownToHtml from "@/lib/markdownToHtml";
+
 import Alert from "@/app/_components/alert";
 import Container from "@/app/_components/container";
 import Header from "@/app/_components/header";
 import { PostBody } from "@/app/_components/post-body";
 import { PostHeader } from "@/app/_components/post-header";
+import { getAllPosts, getPostBySlug } from "@/lib/api";
+import { CMS_NAME } from "@/lib/constants";
+import markdownToHtml from "@/lib/markdownToHtml";
 
-export default async function Post({ params }: Params) {
+const Post = async ({ params }: Params) => {
   const post = getPostBySlug(params.slug);
 
   if (!post) {
@@ -35,7 +36,9 @@ export default async function Post({ params }: Params) {
       </Container>
     </main>
   );
-}
+};
+
+export default Post;
 
 type Params = {
   params: {

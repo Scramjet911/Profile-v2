@@ -4,7 +4,7 @@ import { Intro } from "@/app/_components/intro";
 import { MoreStories } from "@/app/_components/more-stories";
 import { getAllPosts } from "@/lib/api";
 
-export default function Index() {
+const Index = () => {
   const allPosts = getAllPosts();
 
   const heroPost = allPosts[0];
@@ -27,4 +27,6 @@ export default function Index() {
       </Container>
     </main>
   );
-}
+};
+
+export default Index;
