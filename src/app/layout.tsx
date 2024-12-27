@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 
-import Footer from "@/app/_components/footer";
 import { CMS_NAME, HOME_OG_IMAGE_URL } from "@/lib/constants";
 
 import "./globals.css";
@@ -9,8 +8,8 @@ import "./globals.css";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: `Next.js Blog Example with ${CMS_NAME}`,
-  description: `A statically generated blog example using Next.js and ${CMS_NAME}.`,
+  title: `Shashank | Scramjet911`,
+  description: `A site made by a jack of all trades, master of some. Problem solver | A portfolio and blog site made using Next.js and ${CMS_NAME}.`,
   openGraph: {
     images: [HOME_OG_IMAGE_URL],
   },
@@ -54,7 +53,6 @@ const RootLayout = ({
     </head>
     <body className={inter.className}>
       <div className="min-h-screen">{children}</div>
-      <Footer />
     </body>
   </html>
 );
